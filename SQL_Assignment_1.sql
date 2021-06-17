@@ -95,7 +95,7 @@ ORDER BY ProductID
 --17
 select p.ProductSubcategoryID, p.Name, p.Color, p.ListPrice
 from Production.Product p
-where p.ProductSubcategoryID is not null and p.Name is not null and p.Color is not null and p.ListPrice is not null
+where p.ProductSubcategoryID between 1 and 14 and p.Name is not null and p.Color is not null and p.ListPrice between 0 and 1500
 group by p.ProductSubcategoryID,p.Name, p.Color,p.ListPrice
-order by p.ProductSubcategoryID desc
+order by p.ProductSubcategoryID desc, p.ListPrice desc
 
